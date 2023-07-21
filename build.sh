@@ -23,3 +23,5 @@ echo "Build complete, please run 'docker image ls' to see the container it shoul
 
 #cleanup
 rm -rf src/output
+#remove debian image needed for staging container
+docker image rm debian:bullseye
