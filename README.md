@@ -10,7 +10,8 @@ What does it mean? It is possible that `electriccoinco` could inject malicious c
 Assuming the source code itself is clean, it's better to build it yourself. The problem is you need installed GO and the Docker file will grab all the source (and failed build for me) and for them result in an image of 1.3GB in size. So I decided to take diffrent approach, and build lightwalletd in staging container, take the build binary to host and then build actual container that resulted in ~146MB 
 
 ## How it works 
-img goes here
+
+![Visual](visual.png)
 
 The main `build.sh` script will run staging container that will be automatically deleted.
 Staging container will run `src/build-lightwalletd.sh`. It does all necesarry installation of GO and others, it checks GitHub for latest release tag version, clones the repo and uses that tag source. The output will be created in Host machine and then another command from the main script will build actual docker image using same (tweaked) temaple as can be found in https://github.com/zcash/lightwalletd. 
