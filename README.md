@@ -7,7 +7,7 @@ lightwalletd is generally available via docker hub as `electriccoinco/lightwalle
 
 What does it mean? It is possible that `electriccoinco` could inject malicious code, a tracker and send info via HTTP or even P2P to whoever. They unlikely would do it but how can you tell, will you change the date on your local, build and hope for smae sha256 hash?
 
-Assuming the source code itself is clean, it's better to build it yourself. The problem is you need installed GO and the Docker file will grab all the source (and failed build for me) and for them result in an image of 1.3GB in size. So I decided to take diffrent approach, and build lightwalletd in staging container, take the build binary to host and then build actual container that resulted in ~146MB 
+Assuming the source code itself is clean, it's better to build it yourself. The problem is you need installed GO and the Docker file will grab all the source (and failed build for me) and for them result in an image of 1.3GB in size. So I decided to take diffrent approach, and build lightwalletd in staging container, take the build binary to host and then build actual container that resulted in ~162MB 
 
 ## How it works 
 
