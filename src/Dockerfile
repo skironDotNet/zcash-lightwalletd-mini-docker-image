@@ -1,5 +1,7 @@
 FROM debian:bullseye
 
+RUN apt update && apt install -y ca-certificates && apt clean command
+
 ADD output/lightwalletd /usr/local/bin/
 
 RUN mkdir -p /var/lib/lightwalletd/db \
