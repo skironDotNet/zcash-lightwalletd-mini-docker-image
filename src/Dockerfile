@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM ubuntu:20.04
 
 RUN apt update && apt install -y ca-certificates && apt clean command
 

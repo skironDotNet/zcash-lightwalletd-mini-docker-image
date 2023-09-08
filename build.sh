@@ -3,7 +3,7 @@ mkdir -p $PWD/src/output
 echo "Spinning staging build container" 
 # The --rm option will remove the container but in case something stuck and you close terminal window it will not
 # so naming the container please_delete_me
-docker run -v $PWD/src/output:/output -u 0 -i --rm --name please_delete_me debian:bullseye /bin/sh < src/build-lightwalletd.sh
+docker run -v $PWD/src/output:/output -u 0 -i --rm --name please_delete_me ubuntu:20.04 /bin/sh < src/build-lightwalletd.sh
 
 LWD_TAG=`cat $PWD/src/output/lwd-version.txt 2>/dev/null`
 echo $LWD_TAG
@@ -23,5 +23,3 @@ echo "Build complete, please run 'docker image ls' to see the container it shoul
 
 #cleanup
 rm -rf src/output
-#remove debian image needed for staging container
-docker image rm debian:bullseye
