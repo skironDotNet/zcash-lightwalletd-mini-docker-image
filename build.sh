@@ -1,6 +1,10 @@
 mkdir -p $PWD/src/output
 
-echo "Spinning staging build container" 
+echo "Spinning staging build container"
+
+#remove existing or running container
+docker container rm -f please_delete_me >/dev/null 2>&1
+
 # The --rm option will remove the container but in case something stuck and you close terminal window it will not
 # so naming the container please_delete_me
 docker run -v $PWD/src/output:/output -u 0 -i --rm --name please_delete_me ubuntu:20.04 /bin/sh < src/build-lightwalletd.sh

@@ -20,8 +20,8 @@ go version
 
 #check latest lightwalletd build tag
 LWD_TAG=$(curl -sL https://api.github.com/repos/zcash/lightwalletd/releases/latest | jq -r ".tag_name")
-echo Latest lightwalletd version tag: $LWD_TAG
-echo ***
+echo "Latest lightwalletd version tag: $LWD_TAG"
+echo "***"
 echo $LWD_TAG > /output/lwd-version.txt
 
 #clone lightwalletd repo to inside container
