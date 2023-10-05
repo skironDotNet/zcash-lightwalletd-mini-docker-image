@@ -28,7 +28,7 @@ echo $LWD_TAG > /output/lwd-version.txt
 git clone --progress https://github.com/zcash/lightwalletd.git
 cd lightwalletd
 
-#checkout previosuly discovered latest tag and use that source code
+#checkout previously discovered latest tag and use that source code
 git checkout -b buildtag $LWD_TAG
 make
 
